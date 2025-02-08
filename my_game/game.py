@@ -1,8 +1,11 @@
 import pyxel
 
+SCEEN_WIDTH = 160
+SCEEN_HEIGHT = 120
+
 class App:
     def __init__(self):
-        pyxel.init(160, 120, title="My Game")
+        pyxel.init(SCEEN_WIDTH, SCEEN_HEIGHT, title="My Game")
         pyxel.mouse(True)
         self.number = 0
         pyxel.run(self.update, self.draw)
@@ -19,7 +22,7 @@ class App:
  
     def draw(self):
         pyxel.cls(pyxel.COLOR_DARK_BLUE)
-        pyxel.text(70, 60, f"{self.number}", pyxel.COLOR_PEACH)
+        pyxel.text(SCEEN_WIDTH//2-10, SCEEN_HEIGHT//2, f"{self.number}", pyxel.COLOR_PEACH)
         pyxel.text(30, 60, "-", pyxel.COLOR_WHITE)
         pyxel.text(110, 60, "+", pyxel.COLOR_WHITE)
 
